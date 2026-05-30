@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root{
+	--bg:#0f172a;
+	--card:#0b1220;
+	--muted:#9aa4b2;
+	--accent:#60a5fa;
+	--accent-2:#7c3aed;
+	--text:#e6eef8;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+	margin:0;
+	font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+	background:linear-gradient(180deg,#071025 0%, #071a2a 100%);
+	color:var(--text);
+}
+
+.topbar{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:16px 24px;
+	background:linear-gradient(90deg,var(--card), rgba(255,255,255,0.02));
+	border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.brand{font-weight:700}
+.status{font-size:13px;color:var(--muted)}
+
+.layout{
+	display:grid;
+	grid-template-columns:320px 1fr 420px;
+	gap:20px;
+	padding:28px;
+}
+
+.panel{min-height:60vh}
+.card{
+	background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	padding:16px;
+	border-radius:10px;
+	border:1px solid rgba(255,255,255,0.03);
+	margin-bottom:16px;
+}
+.auth-page{max-width:380px}
+.muted{color:var(--muted);font-size:13px}
+
+.file-list{list-style:none;padding-left:0}
+.file-list li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+
+.upload-card .file-input{display:none}
+.actions{display:flex;gap:8px;margin-top:12px}
+.btn{
+	background:transparent;color:var(--text);padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);cursor:pointer
+}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#fff}
+
+.process-box .result{margin-top:12px}
+.error{color:#ffb4b4;margin-top:8px}
+.message{margin-top:8px;color:var(--accent-2)}
+
+.chat-card textarea{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.query-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}
+.answers .answer{padding:12px;border-radius:8px;margin-top:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+.answers .q{font-weight:600}
+.answers .a{margin-top:6px}
+.answers .meta{font-size:12px;color:var(--muted);margin-top:8px}
+
+.foot{padding:16px;text-align:center;color:var(--muted);font-size:13px}
+
+@media (max-width:1000px){
+	.layout{grid-template-columns:1fr;}
+}
